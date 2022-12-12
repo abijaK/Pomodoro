@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodori</title>
     <link rel="stylesheet" href="./style/style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <main class="wraper">
@@ -13,15 +19,15 @@
         <div class="progress">
         </div>
         <div class="timer">
-            <p class="leftNumber">25</p>
+            <p id="min">25</p>
             <span>:</span>
-            <p class="rightNumber">00</p>
+            <p id="sec">00</p>
         </div>
         <div class="controls">
-            <div class="reset"><button><img src="./assets/svg_pause.png" alt="reset"></button></div>
+            <div class="reset"><button class="resetBtn"></button></div>
             <div class="start-break">
-                <div class="start"><button><img src="./assets/" alt="play"></button></div>
-                <div class="break"><button><img src="./assets/play.png" alt="pause"></button></div>
+                <div class="start"><button class="startBtn"></button></div>
+                <div class="break"><button class="breakBtn"></button></div>
             </div>
         </div>
     </main>
