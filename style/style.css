@@ -4,65 +4,82 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: rgba(156, 90, 147, 0.295);
+    --primary-hover: rgba(156, 90, 147, 0.486);
+    --secondary-color:  rgba(156, 127, 90, 0.548);
+}
+
 body
 {
+    height: 100vh;
     background-image: url('../assets/blue-sky.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 
 .wraper
 {
     height: 100vh;
     width: 100vw;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.progress
+{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 11px rgba(235, 147, 34, 0.856);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.outer{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid rgba(156, 127, 90, 0.548);
+    border-radius: 100%;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15), -6px -6px 10px -1px rgb(255, 255, 255), 6px -6px 10px -1px rgb(255, 255, 255);
+}
+
+.inner{
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    border-radius: 100%;
+    border: 1px solid rgba(156, 127, 90, 0.548);
+}
+
 .timer
 {
-    background-color: rgba(156, 90, 147, 0.295);
-    width: 130px;
-    height: 130px;
+    /* display: none; */
+    background-color: var(--primary-color);
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: x-large;
+    gap: 5px;
 }
 
-.timer p{
+.timer p,
+ .timer span{
+    font-size: 2.5rem;
     font-weight: bold;
 }
-
-.progress
-{
-    background-color: rgba(156, 127, 90, 0.548);
-    margin: 20px;
-    width: 190px;
-    height: 10px;
-    /* border-radius: 50%; */
-    /* position: absolute; */
-    display: none;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: x-large;
-}
-
-/* .progress::before {
-    content: '';
-    position: absolute;
-    width: 95%;
-    height: 95%;
-    border-radius: 50%;
-} */
 
 .controls{
     display: flex;
@@ -78,11 +95,22 @@ body
 
 .reset,
  .start,
+  .break {
+    background-color: var(--primary-color);
+  }
+  .reset:hover,
+  .start:hover,
+   .break:hover {
+     background-color: var(--primary-hover);
+     
+   }
+
+.reset,
+ .start,
   .break{
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    background-color: rgba(156, 127, 90, 0.548);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,8 +118,7 @@ body
 }
 
 
-#start{
-    /* display: none; */
+.start{
     z-index: 1;
     position: relative;
 }
@@ -99,10 +126,36 @@ body
 #start {
     width: 60px;
     height: 60px;
-    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') no-repeat center center / contain;
     border: none;
+    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') no-repeat center center / contain;
     cursor: pointer;
 }
+
+/* .break{
+    z-index: 1;
+    display: none;
+
+    position: absolute;
+}*/
+
+#break{
+    width: 60px;
+    height: 60px;
+    border: none;
+    /* display: none; */
+    background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
+    cursor: pointer;
+} 
+
+/* #onClickStart{
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
+    cursor: pointer;
+}
+#onClickBreak
+#onClickReset */
 
 .reset{
     z-index: 1;
@@ -115,14 +168,3 @@ body
     cursor: pointer;
 }
 
-.break{
-    display: none;
-    z-index: -1;
-    position: absolute;
-}
-
-#break{
-    width: 60px;
-    height: 60px;
-    background: url('https://api.iconify.design/ic/sharp-stop.svg') no-repeat center center / contain;
-}

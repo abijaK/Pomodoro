@@ -15,27 +15,30 @@
 </head>
 <body>
     <main class="wraper">
-        <!-- <img src="./assets/blue-sky.jpeg" alt="background"> -->
-        <div class="progress"></div>
-        <div class="timer">
-            <p id="min"></p>
-            <span>:</span>
-            <p id="sec"></p>
+        <div class="progress">
+            <div class="outer">
+                <div class="inner">
+                    <div class="timer">
+                        <p id="min"></p>
+                        <span>:</span>
+                        <p id="sec"></p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="controls">
             <div class="reset">
                 <button
-                     onclick="resetToDefault()" id="reset"></button>
+                    id="reset"></button>
             </div>
             <div class="start-break">
                 <div class="start">
-                    <button 
-                        onclick="start()"
-                        id="start"></button>
-                </div>
-                <div class="break">
+                    <button id="start"></button>
                     <button id="break"></button>
                 </div>
+                <!-- <div class="break">
+                    <button id="break"></button>
+                </div> -->
             </div>
         </div>
     </main>
