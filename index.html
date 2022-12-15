@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodori</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,34 +14,36 @@
 
 </head>
 <body>
+
     <main class="wraper">
-        <div class="progress">
-            <div class="outer">
-                <div class="inner">
-                    <div class="timer">
-                        <p id="min"></p>
-                        <span>:</span>
-                        <p id="sec"></p>
+        <div class="rec">
+            <div class="progress">
+                <div class="outer">
+                    <div class="inner">
+                        <div class="timer">
+                            <p id="min"></p>
+                            <span>:</span>
+                            <p id="sec"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="reset">
+                    <button
+                        id="reset"></button>
+                </div>
+                <div class="start-break">
+                    <div class="start">
+                        <button id="start"></button>
+                        <button id="break"></button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="controls">
-            <div class="reset">
-                <button
-                    id="reset"></button>
-            </div>
-            <div class="start-break">
-                <div class="start">
-                    <button id="start"></button>
-                    <button id="break"></button>
-                </div>
-                <!-- <div class="break">
-                    <button id="break"></button>
-                </div> -->
-            </div>
-        </div>
     </main>
     <script src="./js/script.js"></script>
+
+
 </body>
 </html>

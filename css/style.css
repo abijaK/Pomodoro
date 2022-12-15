@@ -12,17 +12,29 @@
 
 body
 {
-    height: 100vh;
     background-image: url('../assets/blue-sky.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
 }
 
-.wraper
-{
+.wraper{
     height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rec
+{
+    width: 35%;
+    height: 90%;
+    border-radius: 2%;
+    border: 1px ;
+    box-shadow: 0px 0px 40px 20px
+     rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +43,6 @@ body
 
 .progress
 {
-
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -48,7 +59,7 @@ body
     width: 200px;
     height: 200px;
     padding: 10px;
-    border: 1px solid rgba(156, 127, 90, 0.548);
+    border: 0px solid rgba(156, 127, 90, 0.548);
     border-radius: 100%;
     box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15), -6px -6px 10px -1px rgb(255, 255, 255), 6px -6px 10px -1px rgb(255, 255, 255);
 }
@@ -58,12 +69,11 @@ body
     height: 180px;
     padding: 15px;
     border-radius: 100%;
-    border: 1px solid rgba(156, 127, 90, 0.548);
+    border: 0px solid rgba(156, 127, 90, 0.548);
 }
 
 .timer
 {
-    /* display: none; */
     background-color: var(--primary-color);
     width: 150px;
     height: 150px;
@@ -84,9 +94,8 @@ body
 .controls{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 230px;
-
 }
 
 .start-break{
@@ -131,13 +140,6 @@ body
     cursor: pointer;
 }
 
-/* .break{
-    z-index: 1;
-    display: none;
-
-    position: absolute;
-}*/
-
 #break{
     width: 60px;
     height: 60px;
@@ -146,16 +148,6 @@ body
     background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
     cursor: pointer;
 } 
-
-/* #onClickStart{
-    width: 60px;
-    height: 60px;
-    border: none;
-    background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
-    cursor: pointer;
-}
-#onClickBreak
-#onClickReset */
 
 .reset{
     z-index: 1;

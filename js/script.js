@@ -9,17 +9,18 @@ let breakID = document.getElementById("break");
 let resetID = document.getElementById("reset");
 
 // Initialization
-let startTime = 25;
-let breakTime = 5;
-
-let seconds = "00";
+const initial = {
+    startTime: 25,
+    breakTime: 5,
+    seconds: "00",
+}
 let timeContainer;
 
 
-// Display on page loading
+// Display on loading
 window.onload = () => {
-    min.innerHTML = startTime;
-    sec.innerHTML = seconds;
+    min.innerHTML = initial.startTime;
+    sec.innerHTML = initial.seconds;
     breakID.style.display = "none";
 }
 
@@ -27,12 +28,10 @@ window.onload = () => {
 let start = () => {
     breakID.style.display = "block";
     startID.style.display = "none";
-    // document.querySelector(".start").style.display = "none";
-    // document.querySelector(".break").style.display = "block";
-    seconds = 59;
+    initial.seconds = 59;
     
-    let onWorking = startTime - 1;       // 24  
-    let onBreaking = breakTime - 1;      // 4   
+    let onWorking = initial.startTime - 1;       // 24  
+    let onBreaking = initial.breakTime - 1;      // 4   
     
     breakCounter = 0;
 
@@ -40,28 +39,28 @@ let start = () => {
     let beginCountDown = () => {
         // Display values in DOM once countdown starts
         min.innerHTML = onWorking;
-        sec.innerHTML = seconds;    /**
+        sec.innerHTML = initial.seconds;    /**
                                         * 24:59 
                                         */
 
         // Start with seconds - 1
-        seconds -= 1;          
+        initial.seconds -= 1;          
 
-        if (seconds === 0) {
+        if (initial.seconds === 0) {
             onWorking -= 1;
 
             if (onWorking === -1) {
                 if (breakCounter % 2 === 0) {
                     // Starts with breack timer
-                    onWorking = breakTime;
+                    onWorking = initial.breakTime;
                     breakCounter+=1 
                 } else{
                     // Continue working
-                    onBreaking = startTime; //25
+                    onBreaking = initial.startTime; //25
                     breakCounter+=1
                 }
             }
-            seconds = 59;
+            initial.seconds = 59;
         }       
     }; timeContainer = setInterval(beginCountDown, 1000); // 1000ms
 }
@@ -78,36 +77,16 @@ const breakSession = () => {
 const resetToDefault = () => { 
 
     clearInterval(timeContainer);
-    startTime = 25;
-    seconds = "00";
+    initial.startTime = 25;
+    initial.seconds = "00";
 
-    min.innerHTML = startTime;
-    sec.innerHTML = seconds;
+    min.innerHTML = initial.startTime;
+    sec.innerHTML = initial.seconds;
 
     breakID.style.display = "none";
     startID.style.display = "block";
     // breack;
 };
-
-// let losingProgressInterval, gainingProgressInterval;
-
-// function drowing() {
-//     if(progressBar.value <= 0) {
-//         console.log("You have drowned");
-//         clearInterval(losingProgressInterval)
-//     }else{
-//         progressBar.value--;
-//     }
-// }
-
-// function gainingProgress() {
-//     if (progressBar.value == 100) {
-        
-//     } else {
-        
-//     }
-// }
-
 
 // Add event listener to start button :
 startID.addEventListener('click', () => {
