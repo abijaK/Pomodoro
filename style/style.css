@@ -5,13 +5,14 @@
 }
 
 :root{
-    --primary-color: rgba(156, 90, 147, 0.295);
-    --primary-hover: rgba(156, 90, 147, 0.486);
-    --secondary-color:  rgba(156, 127, 90, 0.548);
     --p-width: 200px;
     --p-height: 200px;
     --button-width : 60px;
     --button-height : 60px;
+    --primary-color: rgba(156, 90, 147, 0.295);
+    --primary-hover: rgba(156, 90, 147, 0.486);
+    --secondary-color:  rgba(156, 127, 90, 0.548);
+    --background-settings: no-repeat center center / contain;
 }
 
 body
@@ -141,7 +142,7 @@ body
     width: var(--button-width);
     height: var(--button-height);
     border: none;
-    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') var(--background-settings);
     cursor: pointer;
 }
 
@@ -149,7 +150,7 @@ body
     width: var(--button-width);
     height: var(--button-height);
     border: none;
-    background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/ic/baseline-pause.svg') var(--background-settings);
     cursor: pointer;
 } 
 
@@ -160,6 +161,6 @@ body
     width: var(--button-width);
     height: var(--button-height);
     border: none;
-    background: url('https://api.iconify.design/ic/sharp-stop.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/ic/sharp-stop.svg') var(--background-settings);
     cursor: pointer;
 }

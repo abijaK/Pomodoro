@@ -7,7 +7,7 @@ let resetButton = document.getElementById("reset");
 
 // Initialization
 let initial = {
-    startTime: 0,
+    startTime: 24,
     breakTime: 4,
     seconds: "00",
 }
