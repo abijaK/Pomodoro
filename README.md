@@ -1,3 +1,3 @@
-# Pomodoro Application
+# Building a simple Pomodoro using vanilla Js
 
-With this project we build a time manager to provide productivity by using vanilla.
+With this project we build a simple Pomodoro to provide productivity.
