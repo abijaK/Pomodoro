@@ -5,9 +5,14 @@
 }
 
 :root{
+    --p-width: 200px;
+    --p-height: 200px;
+    --button-width : 60px;
+    --button-height : 60px;
     --primary-color: rgba(156, 90, 147, 0.295);
     --primary-hover: rgba(156, 90, 147, 0.486);
     --secondary-color:  rgba(156, 127, 90, 0.548);
+    --background-settings: no-repeat center center / contain;
 }
 
 body
@@ -16,7 +21,6 @@ body
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
 }
 
 .wraper{
@@ -29,7 +33,7 @@ body
 
 .rec
 {
-    width: 35%;
+    width: 30%;
     height: 90%;
     border-radius: 2%;
     border: 1px ;
@@ -39,14 +43,14 @@ body
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 .progress
 {
-    width: 200px;
-    height: 200px;
+    width: var(--p-width);
+    height: var(--p-height);
     border-radius: 50%;
-    position: absolute;
     border: solid 11px rgba(235, 147, 34, 0.856);
     display: flex;
     flex-direction: column;
@@ -56,12 +60,14 @@ body
 }
 
 .outer{
-    width: 200px;
-    height: 200px;
+    width: var(--p-width);
+    height: var(--p-height);
     padding: 10px;
     border: 0px solid rgba(156, 127, 90, 0.548);
     border-radius: 100%;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15), -6px -6px 10px -1px rgb(255, 255, 255), 6px -6px 10px -1px rgb(255, 255, 255);
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,.15), 
+            -6px -6px 10px -1px rgb(255, 255, 255), 
+              6px -6px 10px -1px rgb(255, 255, 255);
 }
 
 .inner{
@@ -95,7 +101,7 @@ body
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 230px;
+    gap:160px;
 }
 
 .start-break{
@@ -117,8 +123,8 @@ body
 .reset,
  .start,
   .break{
-    width: 60px;
-    height: 60px;
+    width: var(--button-width);
+    height: var(--button-height);
     border-radius: 100%;
     display: flex;
     flex-direction: column;
@@ -133,19 +139,18 @@ body
 }
 
 #start {
-    width: 60px;
-    height: 60px;
+    width: var(--button-width);
+    height: var(--button-height);
     border: none;
-    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/material-symbols/play-arrow.svg') var(--background-settings);
     cursor: pointer;
 }
 
 #break{
-    width: 60px;
-    height: 60px;
+    width: var(--button-width);
+    height: var(--button-height);
     border: none;
-    /* display: none; */
-    background: url('https://api.iconify.design/ic/baseline-pause.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/ic/baseline-pause.svg') var(--background-settings);
     cursor: pointer;
 } 
 
@@ -153,10 +158,9 @@ body
     z-index: 1;
 }
 #reset{
-    width: 60px;
-    height: 60px;
+    width: var(--button-width);
+    height: var(--button-height);
     border: none;
-    background: url('https://api.iconify.design/ic/sharp-stop.svg') no-repeat center center / contain;
+    background: url('https://api.iconify.design/ic/sharp-stop.svg') var(--background-settings);
     cursor: pointer;
 }
-
